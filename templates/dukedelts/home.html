@@ -1,0 +1,200 @@
+{% extends 'dukedelts/base.html' %}
+
+{% block main %}
+<body data-spy="scroll" data-target="#navbar" data-offset="70">
+  <div class="container page home" id="top">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="left">
+          <div class="top-img">
+            <a href=""><img src="media/DTD_crest.png" class="top-img"></a>
+          </div>
+          <div class="top-title">
+            <a href=""><h2 class="top-title">DELTA TAU DELTA</h2></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <div class="right">
+        {% if user and not user.is_anonymous %}
+           <a class="btn btn-default btn-lg top-btn" href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+        {% else %}
+           <a class="btn btn-default btn-lg top-btn" href="{% url 'social:begin' 'google-oauth2' %}?next=/brothers" role="button">Brother Login</a>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="slogan">
+                <h4>DELTA KAPPA</h4>
+                <hr>
+                <h1>&#916&#932&#916</h1>
+                <hr>
+                <h5>DUKE UNIVERSITY</h5>
+        </div>
+    </div>
+  </div>
+  <div id="nav-wrapper">
+    <nav class="navbar navbar-default" id="nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="brand-group">
+            <a href="#top"><img src="media/DTD_crest.png" class="brand-img"></a>
+            <a class="navbar-brand" href="#top">DELTA TAU DELTA</a>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#alumni">ALUMNI</a></li>
+                <li><a href="#recruitment">RECRUITMENT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                {% if user and not user.is_anonymous %}
+                <li><a href="{% url 'brothers' %}" role="button">BROTHERS</a></li
+                {% endif %}
+              </ul>
+            </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  </div>
+
+ <div class="container section1" id="about">
+  <div class="row">
+    <div class="section-title">
+      <h1>ABOUT US</h1>
+      <i class="fa fa-2x fa-angle-down"></i>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6 half-page">
+      <h4>Welcome</h4>
+      <hr>
+      <p>Welcome to the Delta Kappa chapter of Delta Tau Delta Fraternity at Duke University. Our chapter was founded in 1922 and rechartered in 2003, making us one of the oldest chapters at Duke University. As Delts, we are committed to leading lives of excellence in all aspects of life. We set the highest standards for leadership, academics, athletics, and campus and community involvement.</p>
+
+      <p>If fraternity life is something that you may like to get involved in during your time at Duke, please visit our section for potential members. We are constantly looking for outstanding gentlemen who exemplify our core values and standards.</p>
+    </div>
+    <div class="col-md-6 half-page">
+      <span class="helper"></span><img src="media/DTD_crest.png" class="crest">
+    </div>
+  </div>
+  <br><br><br>
+  <div class="row">
+    <div class="col-md-6 half-page">
+      <img src="media/delthouse.jpg" class="house">
+    </div>
+    <div class="col-md-6 half-page">
+      <h4>History</h4>
+      <hr>
+      <p>Delta Tau Delta is a national fraternity predicated on the values of truth, courage, faith and power. We consider five main principles as our most important obligations: 1) Academic Achievement 2) Active Involvement 3) Honorable Conduct 4) Financial Integrity, and 5) Recruitment. We, in 1886, merged with the Rainbow Fraternity, an ancient and respectable southern fraternity whose values coincided with our own. Our fraternity is divided into five regions across the United States of America: Northern, Eastern, Southern, Western Pacific, and the Western Plains divisions. Delta Tau Delta’s Alpha Chapters are located at Bethany College, Jefferson College, Allegheny College, and Ohio Wesleyan University. Our national community service is the Juvenile Diabetes Research Foundation (JDRF) and our Central Office is located in Fishers, Indiana after initially being located in New York City, New York.</p>
+
+      <p>The Delta Kappa chapter of Delta Tau Delta at Duke University was founded in 1928 making it one of the first fraternities to exist at Duke. After a hiatus, the Delta Kappa chapter was re-founded in 2003. Since our presence began at Duke University in the early twentieth century, we have initiated 1,418 men, a clear indication of our strong presence and everlasting legacy of our longstanding brotherhood.</p>
+    </div>
+  </div>
+ </div>
+ <div class="container section2" id="news">
+  <div class="row">
+    <div class="section-title">
+      <h1>NEWS</h1>
+      <i class="fa fa-2x fa-angle-down"></i>
+    </div>
+  </div>
+  {% if story %}
+      <ul>
+      {% for s in story %}
+          <li>{{ s.title }}</li>
+          <img src="{{ s.image.url }}" width="240px"/>
+      {% endfor %}
+      </ul>
+  {% else %}
+      <p>No stories are available.</p>
+  {% endif %}
+  </div>
+
+<div class="container section1" id="alumni">
+  <div class="row">
+    <div class="section-title">
+      <h1>ALUMNI</h1>
+      <i class="fa fa-2x fa-angle-down"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 half-page">
+      <h2>Dear Alumni,</h2>
+      <p>Delts are brothers for life. Our alumni are an integral part of the success of our organization, whether through professional advice, financial support, or guidance. Please use this page to engage with the fraternity. Feel free to contact the current alumni chairs for updates and news. We would love to hear from you as well.</p>
+    </div>
+    {% load bootstrap3 %}
+    <div class="col-md-6 half-page">
+      {% if alumni_sent == False %}
+        <form action="." method="post" class="form-horizontal">
+          {% csrf_token %}
+          {% bootstrap_form alumni_form layout="control-group" %}
+          <button type="submit" value="Submit" class="btn btn-default" name="alumni"/>
+          Send</button>
+          {% if messages %}
+            {% for message in messages %}
+              {% if "alumni" in message.tags %}
+                <p>{{ message }}</p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </form>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container section2" id="recruitment">
+  <div class="row">
+    <div class="section-title">
+      <h1>RECRUITMENT</h1>
+      <i class="fa fa-2x fa-angle-down"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 half-page">
+      <p>The brothers of Delta Tau Delta are committed to recruitment 365 days a year. We are always looking for young men that embody our motto: "committed to lives of excellence". Our brothers are leaders in all aspects of campus life, from academics to athletics to community service and philanthropy. Our new members are responsible for maintaining this standard of excellence and upholding the traditions of the Fraternity.</p>
+
+      <p>At Duke, the recruitment is deferred to the beginning of the Spring semester to allow ample time to get acclimated to the university setting. Once the recruitment process formally begins, potential new members will be given an opportunity to socialize with current brothers and see all that our chapter (Delta Kappa) has to offer. Our section is located in Decker Tower (also known as Edens 3A) on the first, third and fourth floors.</p>
+
+      <p>If you are interested in joining the brotherhood of Delta Kappa, please fill out the following form to be placed on the Rush Committee's contact list. To receive more information on Delta Tau Delta, Delta Kappa please contact any of our recruitment chairs.</p>
+    </div>
+    <div class="col-md-6 half-page">
+      {% if rush_sent == False %}
+        <form action="." method="post" class="form-horizontal">
+          {% csrf_token %}
+          {% bootstrap_form rush_form layout="control-group" %}
+          <button type="submit" value="Submit" class="btn btn-default" name="rush"/>
+          Send</button>
+          {% if messages %}
+            {% for message in messages %}
+              {% if "rush" in message.tags %}
+                <p>{{ message }}</p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </form>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="container section1" id="contact">
+  <div class="row">
+    <div class="section-title">
+      <h1>CONTACT</h1>
+      <i class="fa fa-2x fa-angle-down"></i>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
