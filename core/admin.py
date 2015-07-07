@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.contrib.auth.admin import GroupAdmin, UserAdmin
 from django.contrib.auth.models import Group, User
-from core.models import Role
+from core.models import Profile
 
 class GroupAdminForm(forms.ModelForm):
     users = forms.ModelMultipleChoiceField(queryset=User.objects.all(),

@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from secret import SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_EMAILS, EMAIL_HOST_PASSWORD
 from secret import SOCIAL_AUTH_GOOGLE_OAUTH2_KEY, SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
+from secret import db_pw
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -120,7 +121,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dukedelts',
         'USER': 'tomrom',
-        'PASSWORD': 'awdrgyjil',
+        'PASSWORD': db_pw,
         'HOST': 'localhost',
         'PORT': '',
     }
