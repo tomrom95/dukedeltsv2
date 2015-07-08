@@ -16,5 +16,3 @@ def add_users():
 			User.objects.create_user(username=username, email=email)
 		except:
 			print "pass"
-
-
