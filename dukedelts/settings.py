@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'rfx0gvbgnp0xy-04$))=)&f+yj0ztwqbhunkd#q#fiqk%0dxz^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 
 ALLOWED_HOSTS = ['localhost','test.dukedelts.com','45.55.199.218','test2.com']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'localflavor',
     'core',
+    'exec_board',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
