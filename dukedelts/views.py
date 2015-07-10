@@ -7,6 +7,8 @@ from .forms import AlumniForm, RushForm
 from django.core.mail import send_mail
 from .settings import EMAIL_HOST_USER
 from django.contrib import messages
+from core.models import Background
+from exec_board.utils import ordered_list
 
 def home(request, *args):
     alumni_form = AlumniForm()
@@ -15,8 +17,10 @@ def home(request, *args):
     rush_sent = 'rush_sent' in args
     context = RequestContext(request,
                            {'request': request,
+                            'background': Background.objects.all(),
                             'user': request.user,
-                            'story': Story.objects.all()})
+                            'story': Story.objects.all(),
+                            'board': ordered_list()})
     if request.method == 'POST' and "alumni" in request.POST:
         alumni_form = AlumniForm(request.POST)
         alumni_sent = alumni_email(alumni_form)

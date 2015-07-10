@@ -12,3 +12,9 @@ class Profile(models.Model):
 
     def __unicode__(self):
     	return "%s %s's profile" %(self.user.first_name, self.user.last_name)
+
+class Background(models.Model):
+    img = models.ImageField()
+
+    def __unicode__(self):
+        return self.img.url.split('/')[-1]
