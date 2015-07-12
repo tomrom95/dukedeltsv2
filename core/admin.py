@@ -16,7 +16,7 @@ class GroupAdminForm(forms.ModelForm):
     class Meta:
         model = Group
         fields = '__all__'
-        
+
     def __init__(self, *args, **kwargs):
         instance = kwargs.get('instance', None)
         if instance is not None:
@@ -24,10 +24,10 @@ class GroupAdminForm(forms.ModelForm):
             initial['users'] = instance.user_set.all()
             kwargs['initial'] = initial
         super(GroupAdminForm, self).__init__(*args, **kwargs)
-        
+
     def save(self, commit=True):
         group = super(GroupAdminForm, self).save(commit=commit)
-        
+
         if commit:
             group.user_set = self.cleaned_data['users']
         else:
@@ -49,6 +49,8 @@ class ProfileInline(admin.StackedInline):
 # Define a new User admin
 class UserAdmin(UserAdmin):
     inlines = (ProfileInline, )
+    list_display = ('first_name', 'last_name', 'email', 'username',)
+    ordering = ('first_name', 'last_name',)
 
 admin.site.unregister(Group)
 admin.site.register(Group, MyGroupAdmin)

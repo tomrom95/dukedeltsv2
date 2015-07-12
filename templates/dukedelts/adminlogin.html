@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Admin Login</title>
+   <link rel="shortcut icon" href="/media/favicon.ico">
+   <!-- Bootstrap -->
+   <link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+   <link href="/static/css/bootstrap-theme.min.css" rel="stylesheet"/>
+   <link href="/static/css/custom.css" rel="stylesheet"/>
+   <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+<style>
+.login{
+    padding-top:10%;
+    height:100%;
+}
+.btn{
+    width:200px;
+    height: 200px;
+    text-align: center;
+    line-height: 170px;
+    font-size: 22px;
+}
+
+.center{
+    text-align: center
+}
+</style>
+<div class="login row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+    <div class="center">
+        {% if user and not user.is_anonymous %}
+           <a class="btn btn-default btn-lg" href="/admin/view/">Admin Site</a>
+        {% else %}
+           <a class="btn btn-default btn-lg" href="{% url 'social:begin' 'google-oauth2' %}?next=/admin/view/" role="button">Admin Login</a>
+        {% endif %}
+        
+    </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+</body>
+</html>

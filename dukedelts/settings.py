@@ -79,6 +79,7 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 LOGIN_REDIRECT_URL = '/brothers'
+USE_SOCIAL_AUTH_AS_ADMIN_LOGIN = True
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

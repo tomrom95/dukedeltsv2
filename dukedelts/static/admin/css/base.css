@@ -504,7 +504,7 @@ a.button {
     font-size: 11px;
     text-align: left;
     font-weight: bold;
-    background: #7CA0C7 url(../img/default-bg.gif) top left repeat-x;
+    background: #3c1969;
     color: #fff;
 }
 
@@ -786,8 +786,8 @@ table#change-history tbody th {
 
 #header {
     width: 100%;
-    background: #417690;
-    color: #ffc;
+    background: #3c1969;
+    color: #fff;
     overflow: hidden;
 }
 
@@ -810,7 +810,7 @@ table#change-history tbody th {
 }
 
 #branding h1, #branding h1 a:link, #branding h1 a:visited {
-    color: #f4f379;
+    color: #fff;
 }
 
 #branding h2 {

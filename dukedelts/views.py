@@ -49,6 +49,10 @@ def brothers(request):
     return render_to_response('dukedelts/brothers.html',
                              context_instance=context)
 
+def adminlogin(request):
+    context = RequestContext(request, {'user': request.user})
+    return render_to_response('dukedelts/adminlogin.html', context_instance=context)
+
 def alumni_email(form):
     if form.is_valid():
         subject = "DukeDelts Alumni Response: " + form.cleaned_data['subject']
