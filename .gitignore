@@ -1,2 +1,4 @@
 dukedelts/secret*
 *.pyc
+*/migrations
+brothers.txt

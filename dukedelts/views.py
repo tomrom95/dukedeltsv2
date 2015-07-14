@@ -20,19 +20,18 @@ def home(request, *args):
                             'background': Background.objects.all(),
                             'user': request.user,
                             'story': Story.objects.all(),
+                            'range': range(0,len(Story.objects.all())),
                             'board': ordered_list()})
     if request.method == 'POST' and "alumni" in request.POST:
         alumni_form = AlumniForm(request.POST)
         alumni_sent = alumni_email(alumni_form)
         messages.success(request, 'Alumni email sent', extra_tags='alumni')
-        return HttpResponseRedirect(
-            reverse("dukedelts.views.home"))
+        return HttpResponseRedirect('/#alumni')
     elif request.method == 'POST' and "rush" in request.POST:
         rush_form = RushForm(request.POST)
         rush_sent = rush_email(rush_form)
         messages.success(request, 'Rush email sent', extra_tags='rush')
-        return HttpResponseRedirect(
-            reverse("dukedelts.views.home"))
+        return HttpResponseRedirect('/#recruitment')
     return render_to_response('dukedelts/home.html',
                              {'alumni_form': alumni_form,
                              'rush_form': rush_form,
