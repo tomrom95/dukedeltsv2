@@ -246,7 +246,7 @@ p {
 	width: 200px;
 }
 
-.btn {
+.btn{
 	border-radius: 1;
 	background: #3c1969;
 	border: 0 none;
@@ -260,7 +260,11 @@ p {
     transition:         background .25s;
 }
 
-.btn:hover, .btn:active, .btn:focus {
+.btn:focus {
+	background: #3c1969;
+}
+
+.btn:hover, .btn:active{
 	background: #FFD700;
 	color: white;
 }
@@ -367,16 +371,16 @@ p {
 .carousel-control:active {
 	color: #3c1969;
 	opacity: 1;
-}
-
-.carousel-control:hover {
-	color: #FFD700;
-	opacity: 1;
 	-webkit-transition: color .25s;
     -moz-transition:    color .25s;
     -ms-transition:     color .25s;
     -o-transition:      color .25s;
     transition:         color .25s;
+}
+
+.carousel-control:hover {
+	color: #FFD700;
+	opacity: 1;
 }
 
 .fa-chevron-right,
@@ -408,6 +412,118 @@ p {
 }
 .story-title p{
 	font-size:10px;
+}
+
+.contact-title {
+	padding-top: 30px;
+	text-align: center;
+}
+
+.contact-title hr{
+	width: 90%;
+}
+
+.right-container {
+	text-align: right;
+}
+
+.box {
+	height: 170px;
+	width: 130px;
+	overflow: hidden;
+	position: relative;
+	float: right;
+}
+.box img{
+	width: 130px;
+	position: absolute;
+	left:0;
+}
+
+.box .overlay{
+	background: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	height: 170px;
+	width: 130px;
+	transition:opacity 0.25s linear;
+}
+
+.box:hover .overlay{
+	opacity: 1;
+} 
+
+.exec {
+	padding-bottom: 20px;
+}
+
+p.position {
+	font-size: 15px;
+	font-weight: 900;
+}
+
+.fa-envelope-o {
+	position: absolute;
+	right: 36.5px;
+	top: 51px;
+	color: #fff;
+}
+
+.fa-envelope,
+.fa-home,
+.fa-facebook,
+.fa-globe {
+	color: #3c1969;
+	-webkit-transition: color .25s;
+    -moz-transition:    color .25s;
+    -ms-transition:     color .25s;
+    -o-transition:      color .25s;
+    transition:         color .25s;
+}
+
+.fa-envelope:hover, .fa-envelope:focus,
+.fa-home:hover, .fa-home:focus,
+.fa-facebook:hover, .fa-facebook:focus,
+.fa-globe:hover, .fa-globe:focus {
+	color: #FFD700
+}
+
+.link {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.footer {
+	background: #3c1969;
+	width: 100%;
+	height: 300px;
+	text-align: center
+}
+
+.btn-circle {
+	width: 65px;
+	height: 65px;
+	margin-top: 15px;
+	padding: 7px 16px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	color: #fff;
+	background: 0 0;
+}
+
+.scroll-up {
+	padding: 30px;
+}
+
+.footer p{
+	color: #fff;
+}
+
+.fa-angle-double-up {
+	color: #fff;
 }
 
 hr {
@@ -569,6 +685,9 @@ hr {
 
 	.slogan hr {
 		width: 210px;
+	}
+	.crest {
+		height: 250px;
 	}
 
 }
