@@ -3,3 +3,7 @@ dukedelts/secret*
 */migrations
 brothers.txt
 media/*
+!media/delthouse.jpg
+!media/crest.png
+!media/favicon.ico
+!media/DTD_crest.png
