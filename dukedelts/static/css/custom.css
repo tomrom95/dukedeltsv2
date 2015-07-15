@@ -76,6 +76,11 @@ p {
 
 .top-title a:hover h2{
 	color: #FFD700;
+	-webkit-transition: color .25s;
+    -moz-transition:    color .25s;
+    -ms-transition:     color .25s;
+    -o-transition:      color .25s;
+    transition:         color .25s;
 }
 
 .top-title {
@@ -145,6 +150,11 @@ p {
 .navbar-default .brand-group > a:focus,
 .navbar-default .brand-group > a:active {
 	color: #FFD700;
+	-webkit-transition: color .25s;
+    -moz-transition:    color .25s;
+    -ms-transition:     color .25s;
+    -o-transition:      color .25s;
+    transition:         color .25s;
 }
 
 .brand-img {
@@ -244,10 +254,10 @@ p {
 	text-shadow: none;
 	color: white;
 	-webkit-transition: background .25s;
-    	-moz-transition:    background .25s;
-    	-ms-transition:     background .25s;
-    	-o-transition:      background .25s;
-    	transition:         background .25s;
+    -moz-transition:    background .25s;
+    -ms-transition:     background .25s;
+    -o-transition:      background .25s;
+    transition:         background .25s;
 }
 
 .btn:hover, .btn:active, .btn:focus {
@@ -362,6 +372,11 @@ p {
 .carousel-control:hover {
 	color: #FFD700;
 	opacity: 1;
+	-webkit-transition: color .25s;
+    -moz-transition:    color .25s;
+    -ms-transition:     color .25s;
+    -o-transition:      color .25s;
+    transition:         color .25s;
 }
 
 .fa-chevron-right,
