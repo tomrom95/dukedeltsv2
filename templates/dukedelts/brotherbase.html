@@ -25,6 +25,24 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
    <!-- Include all compiled plugins (below), or include individual files as needed -->
    <script src="/static/js/bootstrap.min.js"></script>
+   <script src="/static/js/jquery.easing.1.3.js"></script>
+   <script src="/static/js/jquery.easing.compatibility.js"></script>
    <script src="/static/js/custom.js"></script>
+   <script src="/static/js/jquery.smooth-scroll.js"></script>
+   <script>
+       $('.navbar-collapse a').click('li', function() {
+          var navbar_toggle = $('.navbar-toggle');
+          if (navbar_toggle.is(':visible')) {
+              navbar_toggle.trigger('click');
+      }});
+   </script>
+   <script>
+      $(document).ready(function() {
+         $('.navbar-default a').smoothScroll({
+            easing: 'easeInOut',
+            speed: 800
+         });
+      });
+   </script>
  </body>
 </html>

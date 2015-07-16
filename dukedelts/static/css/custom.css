@@ -136,6 +136,7 @@ p {
 .brand-group {
 	position: fixed;
 	left: 10px;
+	z-index: 100;
 }
 
 .navbar-brand {
@@ -529,6 +530,49 @@ p.position {
 hr {
 	border-top: 1px solid #d3d3d3;
 }
+
+.brother-section {
+	width: 100%;
+	padding-top: 80px;
+	text-align: center;
+	min-height: 50%;
+}
+.grid {
+	text-align: center;
+}
+.grid > a {
+	display: inline-block;
+	margin: 0 3px 5px 0;
+	background: #3c1969;
+	color: #fff;
+	text-decoration: none;
+	padding-top: 30px;
+	vertical-align: top;
+	width: 150px;
+	height: 80px;
+	-webkit-transition: background .25s;
+    -moz-transition:    background .25s;
+    -ms-transition:     background .25s;
+    -o-transition:      background .25s;
+    transition:         background .25s;
+}
+
+.grid > a:hover {
+	background: #FFD700;
+}
+
+.small {
+	line-height: 9px;
+	font-size: 10px;
+}
+a.more {
+	padding-top: 7px;
+}
+.wrap {
+	margin: 0 auto;
+	width: 60%;
+}
+
 @media (min-width: 768px){
 	.navbar-nav{
 	    margin: 0 auto;
@@ -555,6 +599,10 @@ hr {
 	#nav.affix .brand-img {
 		visibility:visible;
   		opacity:1;
+	}
+	#nav.affix .invshow{
+		visibility:hidden;
+  		opacity:0;
 	}
 
 }
@@ -587,6 +635,10 @@ hr {
 	.news-half {
 		padding-right: 10%;
 	}
+}
+.show {
+	opacity: 1;
+	visibility: visible;
 }
 
 @media(max-width:767px) {
@@ -655,7 +707,16 @@ hr {
 		padding-right: 50px;
 		line-height: 21px
 	}
-
+	.show {
+		opacity: 0;
+		visibility: hidden;
+	}
+	.invshow {
+		opacity: 1;
+		visibility: visible;
+		position: absolute;
+		left: 10px;
+	}
 
 }
 
@@ -689,5 +750,6 @@ hr {
 	.crest {
 		height: 250px;
 	}
-
 }
+
+
