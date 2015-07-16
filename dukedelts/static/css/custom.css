@@ -582,7 +582,9 @@ a.more {
 }
 
 iframe {
-	width: 90%;
+	width: 1px;
+    min-width: 90%;
+    *width: 90%;
 	height: 800px;
 }
 
@@ -776,6 +778,12 @@ iframe {
 	iframe {
 		height: 400px;
 	}
+}
+
+.always {
+	visibility: visible;
+	opacity: 1;
+	display: inline;
 }
 
 
