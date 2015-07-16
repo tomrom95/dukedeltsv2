@@ -626,6 +626,9 @@ a.more {
 	.house {
 		display: none;
 	}
+	.wrap {
+		width: 80%;
+	}
 }
 
 @media(min-width:991px) {
