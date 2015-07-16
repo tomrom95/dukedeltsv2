@@ -59,8 +59,12 @@
                 <li><a href="#recruitment">RECRUITMENT</a></li>
                 <li><a href="#contact">CONTACT</a></li>
                 {% if user and not user.is_anonymous %}
-                <li><a href="{% url 'brothers' %}" role="button">BROTHERS</a></li
+                <li><a href="{% url 'brothers' %}" role="button">BROTHERS</a></li>
+                <li class="login-li"><a href="{% url 'auth:logout' %}?next={{ request.path }}" role="button">LOGOUT</a></li>
+                {% else %}
+                <li class="login-li"><a href="{% url 'social:begin' 'google-oauth2' %}?next=/brothers" role="button">LOGIN</a></li>
                 {% endif %}
+
               </ul>
             </div><!--/.nav-collapse -->
       </div>

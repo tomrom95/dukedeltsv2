@@ -211,6 +211,10 @@ p {
 	background-color: #FFD700;
 }
 
+.navbar-nav > li.login-li {
+	display: none;
+}
+
 .page {
 	min-height: 100%;
 	max-width: 100%;
@@ -283,6 +287,10 @@ p {
 
 .top-btn:hover, .top-btn:active, .top-btn:focus {
 	border: 1px solid rgba(0, 0, 0, .08);
+}
+.top-btn:focus {
+	background: #FFD700;
+	color: #fff;
 }
 
 .form-control:focus {
@@ -719,6 +727,10 @@ a.more {
 		visibility: visible;
 		position: absolute;
 		left: 10px;
+	}
+
+	.navbar-nav > li.login-li {
+		display: block;
 	}
 
 }
