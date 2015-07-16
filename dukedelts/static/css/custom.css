@@ -581,6 +581,11 @@ a.more {
 	width: 60%;
 }
 
+iframe {
+	width: 90%;
+	height: 800px;
+}
+
 @media (min-width: 768px){
 	.navbar-nav{
 	    margin: 0 auto;
@@ -732,6 +737,9 @@ a.more {
 	.navbar-nav > li.login-li {
 		display: block;
 	}
+	iframe {
+		height: 500px;
+	}
 
 }
 
@@ -764,6 +772,9 @@ a.more {
 	}
 	.crest {
 		height: 250px;
+	}
+	iframe {
+		height: 400px;
 	}
 }
 
