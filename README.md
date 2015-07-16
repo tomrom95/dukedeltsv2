@@ -17,3 +17,6 @@ News stories are in the news app.
 
 Frontend is done using Twitter Bootstrap and custom html/css/javascript. It was completely redone from scratch from the last
 version of the website for a new custom and personalized layout.
+
+Note:
+dukedelts/secret.py and templates/dukedelts/brothers.html are ignored and not in this repo due to privacy reasons
