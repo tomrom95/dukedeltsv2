@@ -146,7 +146,7 @@
                   <p>{{ s.pub_date|date }}</p>
                 </div>
                 <hr>
-                <p>{{ s.body }}</p>
+                <p>{{ s.body|safe }}</p>
               </div>
             </div>
           </div>
@@ -224,7 +224,7 @@
           {% if messages %}
             {% for message in messages %}
               {% if "rush" in message.tags %}
-                <p><i class="fa fa-check-circle">{{ message }}</p>
+                <p><i class="fa fa-check-circle"></i>{{ message }}</p>
               {% endif %}
             {% endfor %}
           {% endif %}

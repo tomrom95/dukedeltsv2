@@ -61,7 +61,7 @@ def alumni_email(form):
         message += form.cleaned_data['message']
         sender = form.cleaned_data['email']
 
-        recipients = ['tomrom95@gmail.com']
+        recipients = ['tomrom95@gmail.com', 'aaron.jung1399@gmail.com']
         send_mail(subject, message, EMAIL_HOST_USER, recipients)
         return True
     return False
@@ -75,7 +75,7 @@ def rush_email(form):
         message += form.cleaned_data['phone_number'] + "\n"
         message += form.cleaned_data['email']
 
-        recipients = ['tomrom95@gmail.com']
+        recipients = ['tomrom95@gmail.com', 'connor.garet@gmail.com']
         send_mail(subject, message, EMAIL_HOST_USER, recipients)
         return True
     return False

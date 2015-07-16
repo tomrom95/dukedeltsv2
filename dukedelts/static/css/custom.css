@@ -267,6 +267,7 @@ p {
 
 .btn:focus {
 	background: #3c1969;
+	color: white;
 }
 
 .btn:hover, .btn:active{
