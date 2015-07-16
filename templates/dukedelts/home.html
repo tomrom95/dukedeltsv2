@@ -189,7 +189,7 @@
           {% if messages %}
             {% for message in messages %}
               {% if "alumni" in message.tags %}
-                <p>{{ message }}</p>
+                <p><i class="fa fa-check-circle"></i>{{ message }}</p>
               {% endif %}
             {% endfor %}
           {% endif %}
@@ -224,7 +224,7 @@
           {% if messages %}
             {% for message in messages %}
               {% if "rush" in message.tags %}
-                <p>{{ message }}</p>
+                <p><i class="fa fa-check-circle">{{ message }}</p>
               {% endif %}
             {% endfor %}
           {% endif %}

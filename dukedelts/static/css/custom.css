@@ -588,6 +588,11 @@ iframe {
 	height: 800px;
 }
 
+.fa-check-circle {
+	color: #00CC00;
+	padding: 4px;
+}
+
 @media (min-width: 768px){
 	.navbar-nav{
 	    margin: 0 auto;
