@@ -9,6 +9,7 @@ from .settings import EMAIL_HOST_USER
 from django.contrib import messages
 from core.models import Background
 from exec_board.utils import ordered_list
+import random
 
 def home(request, *args):
     alumni_form = AlumniForm()
@@ -17,7 +18,7 @@ def home(request, *args):
     rush_sent = 'rush_sent' in args
     context = RequestContext(request,
                            {'request': request,
-                            'background': Background.objects.all(),
+                            'background': sorted(Background.objects.all(), key=lambda x: random.random()),
                             'user': request.user,
                             'story': Story.objects.all(),
                             'range': range(0,len(Story.objects.all())),
