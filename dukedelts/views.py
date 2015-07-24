@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from news.models import Story
 from .forms import AlumniForm, RushForm
@@ -9,13 +9,12 @@ from .settings import EMAIL_HOST_USER
 from django.contrib import messages
 from core.models import Background
 from exec_board.utils import ordered_list
+import json
 import random
 
-def home(request, *args):
+def home(request):
     alumni_form = AlumniForm()
     rush_form = RushForm()
-    alumni_sent = 'alumni_sent' in args
-    rush_sent = 'rush_sent' in args
     context = RequestContext(request,
                            {'request': request,
                             'background': sorted(Background.objects.all(), key=lambda x: random.random()),
@@ -23,22 +22,24 @@ def home(request, *args):
                             'story': Story.objects.all(),
                             'range': range(0,len(Story.objects.all())),
                             'board': ordered_list()})
-    if request.method == 'POST' and "alumni" in request.POST:
-        alumni_form = AlumniForm(request.POST)
-        alumni_sent = alumni_email(alumni_form)
-        messages.success(request, 'Alumni email sent', extra_tags='alumni')
-        return HttpResponseRedirect('/#alumni')
-    elif request.method == 'POST' and "rush" in request.POST:
-        rush_form = RushForm(request.POST)
-        rush_sent = rush_email(rush_form)
-        messages.success(request, 'Rush email sent', extra_tags='rush')
-        return HttpResponseRedirect('/#recruitment')
     return render_to_response('dukedelts/home.html',
                              {'alumni_form': alumni_form,
-                             'rush_form': rush_form,
-                             'alumni_sent': alumni_sent,
-                             'rush_sent': rush_sent},
+                             'rush_form': rush_form},
                              context_instance=context)
+
+def alumni(request):
+    if request.method == 'POST':
+        alumni_form = AlumniForm(request.POST)
+        message = alumni_email(alumni_form)
+        return HttpResponse(json.dumps({'message': message}))
+    return HttpResponseRedirect('/')
+
+def rush(request):
+    if request.method == 'POST':
+        rush_form = RushForm(request.POST)
+        message = rush_email(rush_form )
+        return HttpResponse(json.dumps({'message': message}))
+    return HttpResponseRedirect('/')
 
 def brothers(request):
     context = RequestContext(request,
@@ -63,9 +64,10 @@ def alumni_email(form):
         sender = form.cleaned_data['email']
 
         recipients = ['tomrom95@gmail.com', 'aaron.jung1399@gmail.com']
+        #recipients = ['tomrom95@gmail.com']
         send_mail(subject, message, EMAIL_HOST_USER, recipients)
-        return True
-    return False
+        return "Success!"
+    return "Failure!"
 
 def rush_email(form):
     if form.is_valid():
@@ -77,6 +79,7 @@ def rush_email(form):
         message += form.cleaned_data['email']
 
         recipients = ['tomrom95@gmail.com', 'connor.garet@gmail.com']
+        #recipients = ['tomrom95@gmail.com']
         send_mail(subject, message, EMAIL_HOST_USER, recipients)
         return True
     return False

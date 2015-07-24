@@ -8,6 +8,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
    url(r'^$', 'dukedelts.views.home', name='home'),
+   url(r'^alumniform', 'dukedelts.views.alumni', name='alumni'),
+   url(r'^rushform', 'dukedelts.views.rush', name='rush'),
    url(r'^brothers', 'dukedelts.views.brothers', name='brothers'),
    url(r'^admin/view/', include(admin.site.urls)),
    url(r'^admin', 'dukedelts.views.adminlogin', name='adminlogin'),
@@ -18,6 +20,8 @@ urlpatterns = patterns('',
 if settings.DEBUG is True:
 	urlpatterns = patterns('',
    	url(r'^$', 'dukedelts.views.home', name='home'),
+      url(r'^alumniform', 'dukedelts.views.alumni', name='alumni'),
+      url(r'^rushform', 'dukedelts.views.rush', name='rush'),
    	url(r'^brothers', 'dukedelts.views.brothers', name='brothers'),
    	url(r'^admin/view/', include(admin.site.urls)),
       url(r'^admin', 'dukedelts.views.adminlogin', name='adminlogin'),

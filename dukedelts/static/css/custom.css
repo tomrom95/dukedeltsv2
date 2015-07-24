@@ -594,6 +594,13 @@ iframe {
 	padding: 4px;
 }
 
+.alumni-circle {
+	visibility: hidden;
+}
+.rush-circle {
+	visibility: hidden;
+}
+
 @media (min-width: 768px){
 	.navbar-nav{
 	    margin: 0 auto;
@@ -783,6 +790,16 @@ iframe {
 	}
 	iframe {
 		height: 400px;
+	}
+	.fa-chevron-right,
+	.fa-chevron-left {
+		opacity: .4;
+	}
+	.fa-chevron-right {
+		right: -10px;
+	}
+	.fa-chevron-left {
+		left: -10px;
 	}
 }
 

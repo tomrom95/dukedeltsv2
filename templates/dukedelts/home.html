@@ -180,21 +180,13 @@
     </div>
     {% load bootstrap3 %}
     <div class="col-md-6 half-page">
-      {% if alumni_sent == False %}
-        <form action="." method="post" class="form-horizontal">
+        <form action="" method="post" class="form-horizontal" id="alumniform">
           {% csrf_token %}
           {% bootstrap_form alumni_form layout="control-group" %}
           <button type="submit" value="Submit" class="btn btn-default" name="alumni"/>
           Send</button>
-          {% if messages %}
-            {% for message in messages %}
-              {% if "alumni" in message.tags %}
-                <p><i class="fa fa-check-circle"></i>{{ message }}</p>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
+          <p><i class="fa fa-check-circle alumni-circle"></i><span class="alumni-message"></span></p>
         </form>
-      {% endif %}
     </div>
   </div>
 </div>
@@ -215,21 +207,13 @@
       <p>If you are interested in joining the brotherhood of Delta Kappa, please fill out the following form to be placed on the Rush Committee's contact list. To receive more information on Delta Tau Delta, Delta Kappa please contact any of our recruitment chairs.</p>
     </div>
     <div class="col-md-6 half-page">
-      {% if rush_sent == False %}
-        <form action="." method="post" class="form-horizontal">
+        <form action="" method="post" class="form-horizontal" id="rushform">
           {% csrf_token %}
           {% bootstrap_form rush_form layout="control-group" %}
           <button type="submit" value="Submit" class="btn btn-default" name="rush"/>
           Send</button>
-          {% if messages %}
-            {% for message in messages %}
-              {% if "rush" in message.tags %}
-                <p><i class="fa fa-check-circle"></i>{{ message }}</p>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
+          <p><i class="fa fa-check-circle rush-circle"></i><span class="rush-message"></span></p>
         </form>
-      {% endif %}
     </div>
   </div>
 </div>
@@ -308,7 +292,7 @@
         <i class="fa fa-angle-double-up fa-3x"></i>
       </a>
     </div>
-    <p>&copy;Copyright 2014 - Delta Kappa Chapter, Delta Tau Delta Fraternity</p>
+    <p>&copy;Copyright 2015 - Delta Kappa Chapter, Delta Tau Delta Fraternity</p>
     <p>Site designed, developed, and maintained by Tommy Romano [<a href="http://tomrom95.github.io">Website</a>]</p>
   </div>
 </div>

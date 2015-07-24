@@ -49,6 +49,40 @@
          });
       });
    </script>
+   <script type="text/javascript">
+    $(document).ready(function() {
+        $('#alumniform').submit(function(event) { // catch the form's submit event
+            $.ajax({ // create an AJAX call...
+                data: $(this).serialize(), // get the form data
+                type: 'POST', // GET or POST
+                url: '/alumniform', // the file to call
+                success: function(data) { // on success..
+                    $('.alumni-message').html('Your message has been sent')
+                    $('.alumni-circle').css('visibility','visible')
+                    $("#alumniform")[0].reset();
+                }
+            });
+            event.preventDefault();
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#rushform').submit(function(event) { // catch the form's submit event
+            $.ajax({ // create an AJAX call...
+                data: $(this).serialize(), // get the form data
+                type: 'POST', // GET or POST
+                url: '/rushform', // the file to call
+                success: function(data) { // on success..
+                    $('.rush-message').html('Your message has been sent')
+                    $('.rush-circle').css('visibility','visible')
+                    $("#rushform")[0].reset();
+                }
+            });
+            event.preventDefault();
+        });
+    });
+    </script>
 
    <script>
       $(document).ready(function() {
