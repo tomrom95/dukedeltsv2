@@ -834,4 +834,7 @@ button.donate {
 	display: inline;
 }
 
+button:focus {
+    outline: 0 !important;
+}
 
