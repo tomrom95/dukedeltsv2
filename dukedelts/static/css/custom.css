@@ -582,11 +582,33 @@ a.more {
 	width: 60%;
 }
 
-iframe {
+iframe.brotherframe {
 	width: 1px;
     min-width: 90%;
     *width: 90%;
 	height: 800px;
+}
+
+iframe.donateiframe {
+	width: 1px;
+    min-width: 100%;
+    *width: 100%;
+	min-height:450px
+}
+
+.donateframe {
+	display: block;
+	text-align: center;
+	padding: 15px;
+}
+
+button.donate {
+	padding: 12px;
+	font-size: 16px;
+}
+
+.donatewrapper {
+	text-align: center;
 }
 
 .fa-check-circle {
@@ -800,6 +822,9 @@ iframe {
 	}
 	.fa-chevron-left {
 		left: -10px;
+	}
+	iframe.donateiframe {
+		height: 500px;
 	}
 }
 
