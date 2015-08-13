@@ -1,7 +1,7 @@
 # Duke Delts Website V2
 
 Second version of Duke Delta Tau Delta website, now with Django backend. Project is temporarily located at 
-<a href="http://dukedelts.com/">dukedelts.com</a>
+<a href="https://dukedelts.com/">dukedelts.com</a>
 
 
 <b>Backend</b>
