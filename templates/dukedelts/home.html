@@ -273,9 +273,13 @@
   </div>
   <div class="row">
     <div class="col-sm-3 link">
-      <a href="mailto:sarey.hamarneh@duke.edu">
-        <i class="fa fa-envelope fa-5x"></i>
-      </a>
+      {% for b in board %}
+        {% if b.position == "President" %}
+          <a href="mailto:{{ b.email }}">
+            <i class="fa fa-envelope fa-5x"></i>
+          </a>
+        {% endif %}
+      {% endfor %}
     </div>
     <div class="col-sm-3 link">
       <a href="https://www.google.com/maps/place/Decker+Tower,+Durham,+NC+27710/@35.9984779,-78.9356909,18z/data=!4m7!1m4!3m3!1s0x89ace6a5dd59e38f:0xff08714a9bb4cfdc!2sEdens+Dr,+Durham,+NC+27710!3b1!3m1!1s0x89ace6a5ec034b29:0x80cabc38b88aa461" target="_blank">

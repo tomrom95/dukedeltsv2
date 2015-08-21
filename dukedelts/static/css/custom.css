@@ -600,6 +600,8 @@ iframe.donateiframe {
 	display: block;
 	text-align: center;
 	padding: 15px;
+	margin-left: -10%;
+	margin-right: -10%;
 }
 
 button.donate {
