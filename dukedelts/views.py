@@ -71,7 +71,7 @@ def alumni_email(form):
 
 def rush_email(form):
     if form.is_valid():
-        subject = "Rush Sign Up"
+        subject = "Rush Sign Up- %s" %form.cleaned_data['name']
         message = "Please sign this respondent to our rush list:\n\n"
         message += form.cleaned_data['name'] + "\n"
         message += "Class of: %s\n" %form.cleaned_data['year']
